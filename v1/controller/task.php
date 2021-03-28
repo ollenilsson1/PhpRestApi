@@ -279,7 +279,7 @@ if (array_key_exists("taskid", $_GET)) {
             $response->addMessage($ex->getMessage());
             $response->send();
             exit;
-        } catch (PDOEXception $ex) {
+        } catch (PDOException $ex) {
             error_log("Database query error -" . $ex, 0);
             $response = new Response();
             $response->setHttpStatusCode(500);
